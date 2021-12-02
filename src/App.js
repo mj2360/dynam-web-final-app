@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react'; 
+import {Navigate, BrowserRouter as Router, Routes, Route} from 'react-router-dom'; 
 import './App.css';
+//import CanvasRoom from '.pages/CanvasRoom';
+import CreateUser from './pages/CreateUser';
+import Login from './pages/Login';
+import UserProfile from './pages/UserProfile';
+import Dashboard from '.pages/Dashboard';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+     <Router>
+       <Routes>
+         <Route path="/login" element={<Login />}/>
+         <Route path="/create-user" element={<CreateUser />}/>
+         <Route path="/canvas-room" element={<CanvasRoom />}/>
+         <Route path="/user/:id" element={<UserProfile />}/>
+         <Route path="/" element={<Dashboard />}/>
+       </Routes>
+     </Router>
     </div>
   );
 }
