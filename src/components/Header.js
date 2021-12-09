@@ -4,13 +4,13 @@ function Header({ logOut, loggedIn}) {
     return(
      <header className="HeaderWrapper">
          <div className="Header PageWrapper">
-         <h1>Doodl.</h1>
+         <h1 className="Logo">Doodl.</h1>
          <nav>
              {/* use icons for links  */}
              {!loggedIn && (
                  <>
-                    <a href="/login">Login</a>
-                    <a href="/create-user">Create User</a>
+                    <a href="/login" className="aLogin">Login</a>
+                    <a href="/create-user" className="aCreate">Create User</a>
                  </>
              )}
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600&family=Montserrat:wght@400&display=swap');
+
 .PageWrapper {
     margin: 0 auto; 
     max-width: 1140px;
@@ -9,16 +11,19 @@
     align-items: center;
     display: flex; 
     justify-content: space-between;
+    padding: 0px;
 }
 
 
 .HeaderWrapper{
-    border-bottom: 1px solid gray;
-    padding: 5px 0px;
+    border-bottom: 2px solid #00B7FF;
+    margin-bottom: 25px; 
+    padding: 0px;
 }
 
 .Header nav a {
-    color: black; 
+    border-radius: 3px;
+    color: #3D4F99;
     font-size: 18px;
     font-weight: bold; 
     margin: 0 5px; 
@@ -26,18 +31,62 @@
     text-decoration: none;
 
 }
+.aCreate {
+  background-color: #00B7FF;
+  border: 10px solid #00B7FF; 
+
+}
+.aLogin{
+  background-color: #FF8240;
+  border: 10px solid #FF8240; 
+}
 .Header nav a:last-child {
     margin-right: 0;
     padding-right: 0;
   }
 
-  .Form form {
+  .FormWrap {
+    background-color: #4A5E99;
+    border-radius: 25px;
+    padding-top: 125px;
+    padding-bottom: 125px;
+    margin: 0 auto;
+    margin-top: 105px;
+    width: 650px;
+  }
+
+  .FormWrap form {
     display: flex;
     flex-direction: column;
     max-width: 450px;
+    margin: 0 auto; 
   }
   
-  .Form input {
+  .FormWrap input {
     margin-bottom: 30px;
     padding: 15px 5px;
+  }
+
+  .FormWrap label {
+    color: #00B7FF; 
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 5px; 
+  }
+
+  .FormWrap button{
+    background: none;
+    border: 1px solid #00B7FF;
+    color: #00B7FF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+  }
+
+  .Logo{
+    color: #F8F8FF; 
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-size: 38px;
+    padding: 0px;
   }

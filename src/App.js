@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import { Navigate, BrowserRouter as Router, Routes, Route} from 'react-router-dom'; 
 import './App.css';
 import CreateUser from './pages/CreateUser';
@@ -6,13 +6,15 @@ import Login from './pages/Login';
 import UserProfile from './pages/UserProfile';
 import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
-import firebase from 'firebase/app';
+//import firebase from 'firebase';
+import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import FirebaseConfig from './components/FirebaseConfig';
 import CanvasRoom from './pages/CanvasRoom';
 
+
 function App() {
-  const app = firebase.initializeApp(FirebaseConfig);
+  const app = initializeApp(FirebaseConfig);
 
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -22,6 +24,45 @@ function App() {
 
   const [userInformation, setUserInformation] = useState({});
 
+
+  useEffect(() => {
+    initializeApp(FirebaseConfig);
+    setAppIntialized(true); 
+  }, []);
+
+  useEffect(() => {
+    const auth = getAuth();
+    if (appInitialized) {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          //Logged in
+          setUserInformation(user);
+          setLoggedIn(true);
+        } else {
+          //Not Logged in
+          setUserInformation({});
+          setLoggedIn(false);
+        }
+        setLoading(false);
+      });
+    }
+  }, [appInitialized]);
+
+  function logOut() {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        setUserInformation({});
+        setLoggedIn(false);
+      })
+      .catch((error) => {
+        console.warn(error);
+
+      });
+  }
+
+  if (loading || !appInitialized) return null;
+
   return (
     <div className="App">
       <Header logOut={logOut} loggedIn={loggedIn} />
@@ -30,7 +71,6 @@ function App() {
          <Route path="/login" element={
            !loggedIn ? (
          <Login 
-         setErrors={setErrors}
          setLoggedIn={setLoggedIn}
          setUserInformation={setUserInformation}
          />
@@ -40,10 +80,9 @@ function App() {
         }
         />
 
-         <Route path="/create-user" element={
+          <Route path="/create-user" element={
            !loggedIn ? (
          <CreateUser
-         setErrors={setErrors}
          setLoggedIn={setLoggedIn}
          setUserInformation={setUserInformation}
          />
@@ -57,14 +96,14 @@ function App() {
            loggedIn ? (
          <CanvasRoom />
          ) : (
-          <Navigate to="/canvas-room" />
+          <Navigate to="/login" />
         )
       }/>
 
          <Route path="/user/:id" element={
            loggedIn ? (
          <UserProfile />) : (
-          <Navigate to="/user/:id" />
+          <Navigate to="/login" />
         )
       }/>
 
@@ -72,9 +111,9 @@ function App() {
            loggedIn ? (
          <Dashboard />
          ) : (
-          <Navigate to="/" />
+          <Navigate to="/login" />
         )
-      }/>
+      }/> 
        </Routes>
      </Router>
     </div>

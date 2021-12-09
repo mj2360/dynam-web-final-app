@@ -9,7 +9,7 @@ const Mock_Data = [{
     text: "hi",
     postId: "1",
     userId: "1",
-    userDisplayName:"",
+    userName:"",
 
 }];
 
@@ -17,7 +17,7 @@ const url = 'http://localhost:4000';
 
 
 function Dashboard() {
-    const [canvases, setCanvases] = userState(); 
+    const [canvases, setCanvases] = useState(); 
 //Get all Canvases
     useEffect(() => {
 
@@ -36,10 +36,7 @@ function Dashboard() {
     return(
         <div className="PageWrapper">
             <h1>Dashboard</h1>
-            {Mock_Data.map((canvas, i) =>(
-            
-            <CanvasPost canvas={canvas} key={i} />
-            ))}
+           {canvases && canvases.map((canvas, i) => <CanvasPost canvas={canvas} key={i} />)} 
         </div>
     )
 }

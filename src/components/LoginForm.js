@@ -2,9 +2,8 @@ import React from "react";
 
 function LoginForm({ loginUser }) {
   return (
-    <div className="Form">
-      <h1>Login Form</h1>
-      <form onSubmit={(e) => loginUser(e)}>
+    <div className="FormWrap">
+      <form onSubmit={(e) => loginUser(e)} className="Form">
         <label htmlFor="email">Email</label>
         <input type="email" name="email" placeholder="Enter Email" />
 
