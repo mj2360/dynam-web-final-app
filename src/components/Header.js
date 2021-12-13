@@ -1,4 +1,8 @@
 import React from 'react'; 
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faPlusSquare } from '@fortawesome/free-regular-svg-icons';
+import {faHome, faUser} from '@fortawesome/free-solid-svg-icons';
+
 
 function Header({ logOut, loggedIn}) {
     return(
@@ -16,10 +20,10 @@ function Header({ logOut, loggedIn}) {
 
              {loggedIn && (
                  <>
-                    <a href="/">Dashboard</a>
-                    <a href="/user/:id">Profile</a>
-                    <a href="/canvas-room">CanvasRoom</a>
-                    <a href="/logout">Logout</a>
+                    <a href="/" className="icon"><FontAwesomeIcon icon={faHome} /></a>
+                    <a href="/user/:id" className="icon" ><FontAwesomeIcon icon={faUser} /></a>
+                    <a href="/canvas-room" className="icon"><FontAwesomeIcon icon={faPlusSquare} /></a>
+                    <a href="/login" onClick={() => logOut()} className="aLogout">Logout</a>
                  </>
              )}
 

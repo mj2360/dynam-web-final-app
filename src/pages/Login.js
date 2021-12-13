@@ -3,6 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import 'firebase/auth';
 import LoginForm from "../components/LoginForm";
 
+//TODO: fix error: auth/user not found
 function Login({ setErrors, setLoggedIn, setUserInformation }) {
   const loginUser = useCallback(
     (e) => {
@@ -10,6 +11,8 @@ function Login({ setErrors, setLoggedIn, setUserInformation }) {
 
       const email = e.currentTarget.email.value;
       const password = e.currentTarget.password.value;
+      
+      console.log({email, password});
 
       const auth = getAuth();
 

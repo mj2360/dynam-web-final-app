@@ -11,6 +11,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import FirebaseConfig from './components/FirebaseConfig';
 import CanvasRoom from './pages/CanvasRoom';
+import { ReactP5Wrapper } from "react-p5-wrapper";
 
 
 function App() {
@@ -75,7 +76,7 @@ function App() {
          setUserInformation={setUserInformation}
          />
          ) : (
-          <Navigate to={`/user/${userInformation.uid}`} />
+          <Navigate to={`/`} />
         )
         }
         />
@@ -87,7 +88,7 @@ function App() {
          setUserInformation={setUserInformation}
          />
          ) : (
-          <Navigate to={`/user/${userInformation.uid}`} />
+          <Navigate to={`/`} />
         )
         }
         />

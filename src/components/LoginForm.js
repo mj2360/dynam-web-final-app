@@ -10,6 +10,7 @@ function LoginForm({ loginUser }) {
         <label htmlFor="password">Password</label>
         <input type="password" name="password" placeholder="*************" />
 
+        
         <button type="submit">Log In</button>
       </form>
     </div>

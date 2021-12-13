@@ -2,9 +2,8 @@ import React from "react";
 
 function CreateUserForm({ signUpUser }) {
   return (
-    <div className="Form">
-      <h1>Create User Form</h1>
-      <form onSubmit={(e) => signUpUser(e)}>
+    <div className="FormWrap">
+      <form onSubmit={(e) => signUpUser(e)} >
         <label htmlFor="displayName">Name</label>
         <input type="text" name="name" placeholder="Enter Display Name" />
 

@@ -23,27 +23,42 @@
 
 .Header nav a {
     border-radius: 3px;
-    color: #3D4F99;
-    font-size: 18px;
     font-weight: bold; 
     margin: 0 5px; 
-    padding: 0 5px; 
+    /* padding: 0 5px;  */
     text-decoration: none;
 
 }
 .aCreate {
   background-color: #00B7FF;
   border: 10px solid #00B7FF; 
+  color: #3D4F99;
+  font-size: 18px;
 
 }
 .aLogin{
   background-color: #FF8240;
   border: 10px solid #FF8240; 
+  color: #3D4F99;
 }
-.Header nav a:last-child {
+
+.aLogout{
+  background-color: #FF8240;
+  border: 10px solid #FF8240; 
+  color: #3D4F99;
+  font-size: 18px;
+}
+
+.icon{
+  color: #00B7FF;
+  font-size: 28px; 
+  padding-right: 25px;
+}
+
+/* .Header nav a:last-child {
     margin-right: 0;
     padding-right: 0;
-  }
+  } */
 
   .FormWrap {
     background-color: #4A5E99;
@@ -74,7 +89,7 @@
   }
 
   .FormWrap button{
-    background: none;
+    background-color: #3D4F99;
     border: 1px solid #00B7FF;
     color: #00B7FF;
     font-family: 'Montserrat', sans-serif;
@@ -82,6 +97,10 @@
     line-height: 1;
     margin: 0.5em;
     padding: 1em 2em;
+  }
+
+  .FormWrap button :hover{ 
+    background-color: #4A5E99;
   }
 
   .Logo{
