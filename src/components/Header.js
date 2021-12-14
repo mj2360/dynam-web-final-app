@@ -22,7 +22,7 @@ function Header({ logOut, loggedIn}) {
                  <>
                     <a href="/" className="icon"><FontAwesomeIcon icon={faHome} /></a>
                     <a href="/user/:id" className="icon" ><FontAwesomeIcon icon={faUser} /></a>
-                    <a href="/canvas-room" className="icon"><FontAwesomeIcon icon={faPlusSquare} /></a>
+                    <a href="/post" className="icon"><FontAwesomeIcon icon={faPlusSquare} /> </a>
                     <a href="/login" onClick={() => logOut()} className="aLogout">Logout</a>
                  </>
              )}

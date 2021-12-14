@@ -10,8 +10,7 @@ import Header from './components/Header';
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import FirebaseConfig from './components/FirebaseConfig';
-import CanvasRoom from './pages/CanvasRoom';
-import { ReactP5Wrapper } from "react-p5-wrapper";
+import AddPost from './pages/AddPost';
 
 
 function App() {
@@ -92,10 +91,9 @@ function App() {
         )
         }
         />
-
-         <Route path="/canvas-room" element={
+<Route path="/post" element={
            loggedIn ? (
-         <CanvasRoom />
+         <AddPost userInformation={userInformation} />
          ) : (
           <Navigate to="/login" />
         )

@@ -109,3 +109,25 @@
     font-size: 38px;
     padding: 0px;
   }
+
+.CanvasWrapper{
+  background-color:  #F8F8FF;
+    border: 1px solid #FF8240; 
+    border-radius: 8px;
+    padding: 35px;
+    margin: 0 auto; 
+    margin-bottom: 50px; 
+    max-width: 650px;
+}
+
+.CanvasWrapper:hover{
+    border: 2px solid #FF8240; 
+}
+
+.Images{
+  padding: 15px;
+  display: flex; 
+  justify-content: center;
+  margin: 0 auto; 
+}
+

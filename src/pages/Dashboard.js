@@ -8,7 +8,7 @@ const Mock_Data = [{
     imageSrc:"", 
     text: "hi",
     postId: "1",
-    userId: "1",
+    userId: "",
     userName:"",
 
 }];
