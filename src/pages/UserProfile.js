@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 //import  { MOCK_DATA } from "./Dashboard";
-import CanvasPost from '../components/CanvasPost';
+//import CanvasPost from '../components/CanvasPost';
 
 function UserProfile() {
 return(

@@ -1,7 +1,4 @@
 import React from 'react'; 
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faPlusSquare } from '@fortawesome/free-regular-svg-icons';
-import {faUser} from '@fortawesome/free-solid-svg-icons';
 
 
 function CanvasPost ({ canvas }) {

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { useParams } from 'react-router-dom'; 
 
-const url = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
+const url = `http://localhost:4000`;
 
 function Post () {
     // const [singleCanvas, setSingleCanvas] = useState({}); 
