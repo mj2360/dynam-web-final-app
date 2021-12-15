@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ReactP5Wrapper } from "react-p5-wrapper";
 import AddPostForm from '../components/AddPostForm'; 
 
-const baseUrl = 'http://localhost:4000';
+const baseUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:4000';
 
 
 function sketch(p5) {
