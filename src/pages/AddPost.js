@@ -98,7 +98,7 @@ function AddPost ({userInformation}) {
         const userId = userInformation.uid; 
         const userName = userInformation.displayName;
 
-        console.log({text, imageSrc, imageSrc, userId, userName})
+        console.log({text, imageSrc, imageAlt, userId, userName})
 
         const url = `${baseUrl}/create?text=${text}&imageSrc=${imageSrc}&imageAlt=${imageAlt}&userId=${userId}&userName=${userName}`
          axios

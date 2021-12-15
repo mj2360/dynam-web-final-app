@@ -6,7 +6,6 @@ import Login from './pages/Login';
 import UserProfile from './pages/UserProfile';
 import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
-//import firebase from 'firebase';
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import FirebaseConfig from './components/FirebaseConfig';
@@ -14,7 +13,6 @@ import AddPost from './pages/AddPost';
 
 
 function App() {
-  const app = initializeApp(FirebaseConfig);
 
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -91,7 +89,7 @@ function App() {
         )
         }
         />
-<Route path="/post" element={
+        <Route path="/post" element={
            loggedIn ? (
          <AddPost userInformation={userInformation} />
          ) : (

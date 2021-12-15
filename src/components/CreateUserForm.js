@@ -4,8 +4,8 @@ function CreateUserForm({ signUpUser }) {
   return (
     <div className="FormWrap">
       <form onSubmit={(e) => signUpUser(e)} >
-        <label htmlFor="displayName">Name</label>
-        <input type="text" name="name" placeholder="Enter Display Name" />
+        {/* <label htmlFor="userName">Name</label>
+        <input type="text" name="userName" placeholder="Enter Display Name" /> */}
 
         <label htmlFor="email">Email</label>
         <input type="email" name="email" placeholder="Enter Email" />
